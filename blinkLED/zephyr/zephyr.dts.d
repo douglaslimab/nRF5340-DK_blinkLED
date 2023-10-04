@@ -24,4 +24,5 @@ empty_file.o: C:/ncs/v2.2.0/zephyr/misc/empty_file.c \
  C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_cpuapp_common.dts \
  C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_cpuapp_common-pinctrl.dtsi \
  C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_cpuapp_partition_conf.dts \
- C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts
+ C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts \
+ C:/sav/Embedded/nRF5340/blinkLED/nrf5340dk_nrf5340_cpuapp.overlay

@@ -1271,4 +1271,47 @@ zephyr_udc0: &usbd {
  };
 };
 # 0 "<command-line>" 2
+# 1 "C:/sav/Embedded/nRF5340/blinkLED/nrf5340dk_nrf5340_cpuapp.overlay" 1
+# 15 "C:/sav/Embedded/nRF5340/blinkLED/nrf5340dk_nrf5340_cpuapp.overlay"
+/ {
+ zephyr,user {
+  io-channels = <&adc 0>, <&adc 1>, <&adc 7>;
+ };
+};
+
+&adc {
+ #address-cells = <1>;
+ #size-cells = <0>;
+
+ channel@0 {
+  reg = <0>;
+  zephyr,gain = "ADC_GAIN_1_6";
+  zephyr,reference = "ADC_REF_INTERNAL";
+  zephyr,acquisition-time = <0>;
+  zephyr,input-positive = <1>;
+  zephyr,resolution = <12>;
+ };
+
+ channel@1 {
+  reg = <1>;
+  zephyr,gain = "ADC_GAIN_1_6";
+  zephyr,reference = "ADC_REF_INTERNAL";
+  zephyr,acquisition-time = <0>;
+  zephyr,input-positive = <9>;
+  zephyr,resolution = <14>;
+  zephyr,oversampling = <8>;
+ };
+
+ channel@7 {
+  reg = <7>;
+  zephyr,gain = "ADC_GAIN_1_5";
+  zephyr,reference = "ADC_REF_VDD_1_4";
+  zephyr,vref-mv = <750>;
+  zephyr,acquisition-time = <0>;
+  zephyr,input-positive = <7>;
+  zephyr,input-negative = <8>;
+  zephyr,resolution = <12>;
+ };
+};
+# 0 "<command-line>" 2
 # 1 "C:/ncs/v2.2.0/zephyr/misc/empty_file.c"

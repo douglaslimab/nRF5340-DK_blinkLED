@@ -241,7 +241,36 @@
 				interrupts = < 0xe 0x1 >;
 				status = "okay";
 				#io-channel-cells = < 0x1 >;
+				#address-cells = < 0x1 >;
+				#size-cells = < 0x0 >;
 				phandle = < 0x14 >;
+				channel@0 {
+					reg = < 0x0 >;
+					zephyr,gain = "ADC_GAIN_1_6";
+					zephyr,reference = "ADC_REF_INTERNAL";
+					zephyr,acquisition-time = < 0x0 >;
+					zephyr,input-positive = < 0x1 >;
+					zephyr,resolution = < 0xc >;
+				};
+				channel@1 {
+					reg = < 0x1 >;
+					zephyr,gain = "ADC_GAIN_1_6";
+					zephyr,reference = "ADC_REF_INTERNAL";
+					zephyr,acquisition-time = < 0x0 >;
+					zephyr,input-positive = < 0x9 >;
+					zephyr,resolution = < 0xe >;
+					zephyr,oversampling = < 0x8 >;
+				};
+				channel@7 {
+					reg = < 0x7 >;
+					zephyr,gain = "ADC_GAIN_1_5";
+					zephyr,reference = "ADC_REF_VDD_1_4";
+					zephyr,vref-mv = < 0x2ee >;
+					zephyr,acquisition-time = < 0x0 >;
+					zephyr,input-positive = < 0x7 >;
+					zephyr,input-negative = < 0x8 >;
+					zephyr,resolution = < 0xc >;
+				};
 			};
 			timer0: timer@f000 {
 				compatible = "nordic,nrf-timer";
@@ -787,5 +816,8 @@
 			reg = < 0x20070000 0x10000 >;
 			phandle = < 0xf >;
 		};
+	};
+	zephyr,user {
+		io-channels = < &adc 0x0 >, < &adc 0x1 >, < &adc 0x7 >;
 	};
 };
